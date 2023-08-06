@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./intro.css">
+    <title>HUNGMAN</title>
+</head>
+<body>
+
+
+    <div id="pantalla_inicio" class="pantalla_inicio">
+        <h2>HUGMAN</h2>
+        <button id="playButton"  class="play-button">
+            PLAY
+        </button>
+    </div>
+
+<div class="game-container ">
+        <!--
+        <div class="hungman">
+            <img src="./pngs_juego/hungman.gif" alt="">
+        </div>
+        -->
+
+
+
+        <div class="flex space-between">
+            <div class="counter-contaier">
+                <p id="counter" class="counter"></p>
+            </div>
+            <div class="guesses-contaier">
+                <p id="guesses" class="guesses"></p>
+            </div>
+        </div>
+
+        <div id="all-letters" class="all-letters">
+            <span class="letter" id="A" data-hungman="a">A</span>
+            <span class="letter" id="B" data-hungman="b">B</span>
+            <span class="letter" id="C" data-hungman="c">C</span>
+            <span class="letter" id="D" data-hungman="d">D</span>
+            <span class="letter" id="E" data-hungman="e">E</span>
+            <span class="letter" id="F" data-hungman="f">F</span>
+            <span class="letter" id="G" data-hungman="g">G</span>
+            <span class="letter" id="H" data-hungman="h">H</span>
+            <span class="letter" id="I" data-hungman="i">I</span>
+            <span class="letter" id="J" data-hungman="j">J</span>
+            <span class="letter" id="K" data-hungman="k">K</span>
+            <span class="letter" id="L" data-hungman="l">L</span>
+            <span class="letter" id="M" data-hungman="m">M</span>
+            <span class="letter" id="N" data-hungman="n">N</span>
+            <span class="letter" id="Ñ" data-hungman="ñ">Ñ</span>
+            <span class="letter" id="O" data-hungman="o">O</span>
+            <span class="letter" id="P" data-hungman="p">P</span>
+            <span class="letter" id="Q" data-hungman="q">Q</span>
+            <span class="letter" id="R" data-hungman="r">R</span>
+            <span class="letter" id="S" data-hungman="s">S</span>
+            <span class="letter" id="T" data-hungman="t">T</span>
+            <span class="letter" id="U" data-hungman="u">U</span>
+            <span class="letter" id="V" data-hungman="v">V</span>
+            <span class="letter" id="W" data-hungman="w">W</span>
+            <span class="letter" id="X" data-hungman="x">X</span>
+            <span class="letter" id="Y" data-hungman="y">Y</span>
+            <span class="letter" id="Z" data-hungman="z">Z</span>
+        </div>
+
+        <div class="pista-container">
+            <p id="pista" class="pista"></p>
+        </div>
+        
+
+        <p id="wordDisplay"></p>
+
+      
+        
+        <svg height="250" width="200" class="figure-container">
+        <!--horca-->
+            <line x1="60" y1="20" x2="140" y2="20"></line>
+            <line x1="140" y1="20" x2="140" y2="50"></line>
+            <line x1="60" y1="20" x2="60" y2="230"></line>
+            <line x1="20" y1="230" x2="100" y2="230"></line>
+        <!--cabeza-->
+            <circle id="cabeza" cx="140" cy="70" r="20" class="partes-monigote" ></circle>
+        <!--cuerpo-->
+        <line id="cuerpo" x1="140" y1="100" x2="140" y2="120" class="partes-monigote"></line>
+        <!--brazos-->
+        <line id="brazo-izq" x1="140" y1="120" x2="120" y2="100" class="partes-monigote"></line>
+        <line id="brazo-drch" x1="140" y1="120" x2="160" y2="100" class="partes-monigote"></line>
+        <!--piernas-->  
+        <line id="pierna-izq" x1="140" y1="150" x2="120" y2="180" class="partes-monigote"></line>
+        <line id="pierna-drch" x1="140" y1="150" x2="160" y2="180" class="partes-monigote"></line>
+
+        </svg>
+
+        <div class="wrong-letters-container">
+            <div id= wrong-letters></div>
+        </div>
+
+        <p class="message" id="message"></p>
+
+        <div class="word" id="word"></div>
+
+        <!--MENSAJE FINAL Y BOTÓN PLAY AGAIN-->
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <h2 id="final-message"></h2>
+                <button id="play-button">Play Again</button>
+            </div>
+        </div>
+        <!--NOTIFICACIÓN LETRA
+        <div class="notificacion-container" id="notificacion-container">
+            <p>Ya has introducido esta letra</p>
+        </div>
+        -->
+
+        <button id="playAgainButton" class="play-again">PLAY AGAIN</button>
+
+    <script src="intro.js"></script>
+</div>
+</body>
+</html>
+
+
+
+
+ 

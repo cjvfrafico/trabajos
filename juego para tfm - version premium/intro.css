@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+  font-family: "Dot-Matrix";
+  src: url(./LED\ Dot-Matrix.ttf);
+}
+
+@font-face {
+  font-family: "western";
+  src: url(./TEXAT\ BOLD\ PERSONAL\ USE___.otf);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --default: #121213;
+  --empty: #3a3a3c;
+  --wrong: #b59f3b;
+  --right: #538d4e;
+}
+
+body{
+  background-color: #232323;
+  background-position:center;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  /*:url(./pngs_juego/tfm.png);*/ 
+  background-repeat: no-repeat;
+  opacity: 1;
+  font-family: 'VT323', monospace;
+  color: aliceblue;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*height: 80vh;*/
+  margin: 0;
+  overflow: hidden;
+}
+
+h1{
+  margin: 20px 0 0;
+}
+
+/*
+.game-container{
+  padding: 20px 30px;
+  position: relative;
+  height: 400px;
+  height: 690px;
+  width: 450px;
+  border: 1px solid white;
+  margin: auto;
+  margin: 40px;
+}
+*/
+
+.game-container {
+  padding: 20px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 94%;
+
+  background-image: url(./pngs_juego/pantalla.png);
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+}
+
+.cabeza{
+  padding: 20px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 94%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  background-image: url(./pngs_juego/cabeza.png);
+}
+
+.torso{
+  padding: 20px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 94%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  background-image: url(./pngs_juego/torso.png);
+}
+
+.brazod{
+  padding: 20px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 94%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  background-image: url(./pngs_juego/brazod.png);
+}
+
+.brazoi{
+  padding: 20px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 94%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  background-image: url(./pngs_juego/brazoi.png);
+}
+
+.piernad{
+  padding: 20px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 94%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  background-image: url(./pngs_juego/piernad.png);
+}
+
+.piernai{
+  padding: 20px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 94%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  background-image: url(./pngs_juego/piernai.png);
+}
+
+.vuelta{
+    padding: 20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 94%;
+  
+    background-image: url(./pngs_juego/pantalla.png);
+    background-repeat: no-repeat;
+    margin: auto;
+    background-size: cover;
+  }
+
+
+
+.figure-container{
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+/*IMPORTANTE*/
+.partes-monigote{
+  display: none;
+}
+
+.partes-monigote-ver{
+  display: flex;
+}
+
+.wrong-letters-container{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.wrong-letters-container p{
+  margin: 0 0 5px;
+}
+
+.wrong-letters-container span{
+  font-size: 24px;
+}
+
+.word{
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  transform: translateX(-50);
+  left: 20%;
+  right: 20%;
+}
+
+#wordDisplay{
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 12px;
+  font-size: 100px;
+  margin: 0px;
+  font-weight: 0;
+}
+
+
+.letter{
+  /*border-bottom: 2px solid blueviolet;*/
+  display: inline-flex;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  max-width: 0px 3px;
+  height: 50px;
+  height: 30px;
+
+  width: 20cap;
+  text-transform: lowercase;
+  margin-top: 5%;
+  letter-spacing: 4px;
+  left: 0px;
+}
+
+.letter_ñ{
+  /*border-bottom: 2px solid blueviolet;*/
+  display: inline-flex;
+  font-size: 16px;
+  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  max-width: 0px 3px;
+  height: 50px;
+  height: 30px;
+
+  width: 20cap;
+  text-transform: lowercase;
+
+  color: gray;
+}
+
+.popup-container{
+  background-color: beige;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup{
+  background-color: #3a3a3c;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 1);
+  padding: 20px;
+  text-align: center;
+}
+
+.popup button{
+  cursor: pointer;
+  background-color: green;
+  color: #000;
+  border: 0;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+.pop button:active{
+  transform: scale(0.98);
+}
+
+.pop button:focus{
+  outline: 0;
+}
+
+.notificacion-container{
+  background-color: #3a3a3c;
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.notificacion-container p{
+  margin: 0;
+}
+
+.notificacion-container.show{
+  transform: translateY(-50px);
+}
+
+.hungman{
+  /*para prevenir el scroll*/
+  overflow-x: hidden;
+  position: fixed;
+  }
+
+.newspan{
+  font-size: 50px;
+  font-family: 'Press Start 2P', cursive;
+  font-family: 'VT323', monospace;
+  margin: 2px;
+  width: 50px;
+  }
+
+  .top{
+    margin-top: 12px;
+  }
+
+.all-letters{
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  margin-left: 0%;
+  margin-right: 50%;
+  margin-top: 6%;
+  line-height: 14px;
+}
+
+.pista{
+  color: grey;
+  font-family: 'VT323', monospace;
+}
+
+.letraErrada {
+  color: red;
+}
+
+.letraAcertada {
+  color: gray;
+  color: green;
+}
+
+.flex{
+  display: flex;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.bottom{
+  
+}
+
+.parrafada{
+
+}
+
+.play-again{
+  position: absolute;
+  margin:auto;
+  left: 45%;
+  right: 50%;
+  width: 10%;
+  height: 4%;
+  font-size: 10px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.pista-container{
+  padding: 0px;
+  height: 60px;
+}
+
+.guesses p{
+  padding: 0px;
+  height: 60px;
+  padding-left: 300px;
+}
+
+.counter p{
+  padding: 0px;
+  height: 60px;
+}
+
+  .pantalla_inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: s20px 30px;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /*border: 1px solid white;*/
+    margin: auto;
+    z-index: 999;
+    background-color: #232323;
+    transition: all 1s ease-in-out;
+  }
+
+
+
+.pantalla_inicio_play{
+  z-index: -999;
+  background-color: #232323;
+  display: none;
+  transition: all 1s ease-in-out;
+} 
+
+/* Ajustar la posición y tamaño de la imagen */
+.container img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Alinear el h2 y el botón sobre la imagen */
+.container p, .container button, .container h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Estilos adicionales para el botón y el h2 */
+p {
+  color: white; /* Cambiar el color del texto según sea necesario */
+  font-size: 24px; /* Cambiar el tamaño de fuente según sea necesario */
+  margin-top: 5%;
+}
+
+h2 {
+  color: white; /* Cambiar el color del texto según sea necesario */
+  font-size: 24px; /* Cambiar el tamaño de fuente según sea necesario */
+  margin-top: 0%;
+}
+
+.hungman{
+  font-family: "western" ;
+}
+
+.play-button {
+  position: absolute;
+  /*border: 2px solid #cb997e;*/
+  /*background-color: #452a1b;*/
+  color: #b47538;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation-delay: 1s;
+  z-index: 999;
+  margin-bottom: 200px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-top: 12%;
+  background-color: #332f35;
+  border: 0px solid none;
+  opacity: 1;
+}
+
+
+.play-button::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  /*background-color: rgba(255, 255, 255, 0.5);*/
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: #332f35;
+  border: 0px solid none;
+}
+
+.play-button:hover::before {
+  opacity: 0.5;
+}
+
+/*
+  "cowboy",
+  "cactus",
+  "colt",
+  "mustang",
+  "llanura",
+  "asalto",
+  "pistolero",
+  "sheriff",
+  "jinete",
+  "locomotora",
+  "indios",
+  "buffalo",
+  "siux",
+  "navajo",
+  "apache",
+  "peyote",
+  "rancho",
+  "bandido",
+  "carbón",
+  "batea",
+  "saloon",
+*/
